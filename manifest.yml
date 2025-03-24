@@ -1,0 +1,23 @@
+lzc-sdk-version: "0.1"
+name: Briefing
+package: cloud.lazycat.app.briefing
+version: 3.1.10
+description: 安全的点对点的群组聊天工具
+homepage: https://github.com/holtwick/briefing
+author: holtwick
+application:
+  subdomain: briefing
+  background_task: true
+  multi_instance: false
+  gpu_accel: false
+  kvm_accel: false
+  usb_accel: false
+  public_path:
+    - /
+  routes:
+    - /=http://briefing:8080/
+services:
+  briefing:
+    image: docker.hlmirror.com/holtwick/briefing:3.1.10
+    binds:
+      - /lzcapp/var/data:/app/data
