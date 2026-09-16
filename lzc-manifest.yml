@@ -4,14 +4,12 @@ application:
   multi_instance: false
   public_path:
     - /
-
   upstreams:
     - location: /
       backend: http://briefing:8080/
-
 services:
   briefing:
     # upstream: holtwick/briefing:3.1.10
-    image: holtwick/briefing:3.1.10
+    image: registry.lazycat.cloud/czyt/holtwick/briefing:f2865a4dd55ac41e
     binds:
       - /lzcapp/var/data:/app/data
